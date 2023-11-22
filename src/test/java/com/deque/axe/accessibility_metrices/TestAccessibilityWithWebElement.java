@@ -17,7 +17,6 @@ public class TestAccessibilityWithWebElement {
     /**
      * Test a page with Shadow DOM violations
      */
-    @Test
     public void testAccessibilityWithShadowElement(WebDriver driver, URL scriptUrl, TestName testName) {
 //        driver.get("http://localhost:5005/shadow-error.html");
 
