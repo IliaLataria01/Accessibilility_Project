@@ -1,14 +1,4 @@
-# [DEPRECATED] aXe Selenium (Java) Integration
 
-[![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
-
-> This repository has been deprecated. The package has been moved to [axe-core-maven-html](https://github.com/dequelabs/axe-core-maven-html).
-
-[![CircleCI](https://circleci.com/gh/dequelabs/axe-selenium-java.svg?style=svg)](https://circleci.com/gh/dequelabs/axe-selenium-java)
-
-This example demonstrates how to use aXe to run web accessibility tests in Java projects with the Selenium browser automation tool and Java development tools.
-
-Selenium integration enables testing of full pages and sites.
 
 ## Requirements
 
@@ -17,14 +7,6 @@ Selenium integration enables testing of full pages and sites.
 - The Java SE Development Kit must be installed; follow the directions at http://www.oracle.com/technetwork/java/javase/downloads/index.html to install it.
 - Maven must be installed; follow the directions at http://maven.apache.org/ to install it. Ensure that it is on your path.
 
-## To run the example
-
-1. Move to the `selenium-java` directory.
-2. Ensure that `axe.min.js` is located in `/src/test/resources`.
-3. `node src/test/resources/test-app.js` to start the fixture server.
-4. `mvn test` to build and run the JUnit tests that drive Selenium against the fixture.
-
-This should launch an automated Firefox window, load and analyze the configured web pages, and then pass/fail a JUnit test depending on whether there are any accessibility violations detected.
 
 ## To modify the example
 
@@ -43,7 +25,6 @@ Include this library as a test-scoped dependency in your POM. Ensure the `versio
 </dependency>
 ```
 
-`axe.js` or `axe.min.js` must be available to your test fixtures as a `java.net.URL`. The simplest way to do this is to include it in your own `src.test.resources` and pass `MyTest.class.getResource("/axe.min.js")` to the `Builder` constructor as demonstrated in the `ExampleTest`.
 
 The `AXE` helper defines three public methods and a nested `Builder` class for your unit tests.
 
@@ -59,24 +40,5 @@ The `Builder` class allows tests to chain configuration and analyze pages. The c
 - `skipFrames` prevents aXe to be recursively injected into all iframes.
 - `analyze` executes aXe with any configuration you have previously defined. If you want to test a single `WebElement`, you may pass it into `analyze` instead of using `include` and `exclude`.
 
-The aXe documentation should be consulted for more details on customizing and analyzing calls to `axe.run`.
 
-## Contributing
 
-In order to contribute, you must accept the [contributor licence agreement](https://cla-assistant.io/dequelabs/axe-selenium-java) (CLA). Acceptance of this agreement will be checked automatically and pull requests without a CLA cannot be merged.
-
-## Deployment (Maintainers Only)
-
-This package is deployed to Maven Central via OSSRH. To deploy this package, follow [these instructions on StackOverflow](https://stackoverflow.com/a/42917618).
-
-Additionally add your OSSRH credentials to your `~/.m2/settings.xml` file as such:
-
-```xml
-<servers>
-  <server>
-    <id>ossrh</id>
-    <username>YOUR_OSSRH_JIRA_USERNAME</username>
-    <password>YOUR_OSSRH_JIRA_PASSWORD</password>
-  </server>
-</servers>
-```
