@@ -32,20 +32,7 @@
         </snapshotRepository>
     </distributionManagement>
 
-    <developers>
-        <developer>
-            <name>Dian Fay</name>
-            <email>dian.fay@deque.com</email>
-            <organization>Deque Labs</organization>
-            <organizationUrl>http://www.deque.com</organizationUrl>
-        </developer>
-    </developers>
 
-    <scm>
-        <connection>scm:git:git@github.com:dequelabs/axe-selenium-java.git</connection>
-        <developerConnection>scm:git:git@github.com:dequelabs/axe-selenium-java.git</developerConnection>
-        <url>https://github.com/dequelabs/axe-selenium-java</url>
-    </scm>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -149,6 +136,12 @@
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
             <version>4.13</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.github.bonigarcia</groupId>
+            <artifactId>webdrivermanager</artifactId>
+            <version>5.3.3</version>
             <scope>test</scope>
         </dependency>
     </dependencies>
